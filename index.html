@@ -135,7 +135,7 @@
      return fetch("./apps.json",{cache:"no-store"}).then(function(r){if(!r.ok)throw Error("Katalog fehlt");return r.json()}).then(function(data){if(!Array.isArray(data.apps))throw Error("Ungültiger Katalog");state.apps=data.apps;renderFilters();render()}).catch(function(){byId("app-grid").innerHTML='<div class="empty" style="grid-column:1/-1"><h3>Katalog nicht erreichbar.</h3><p>Prüfe die Veröffentlichung oder öffne das GitHub-Repository.</p></div>';byId("counter").textContent="Katalog nicht verfügbar"});
   }
   function checkAvailability(){
-    return fetch("./updates.json",{cache:"no-store"}).then(function(r){
+    return fetch("https://raw.githubusercontent.com/1234Taschenlampe/ORBIT/main/updates.json",{cache:"no-store"}).then(function(r){
        if(!r.ok)throw Error("Update-Feed nicht verfügbar: "+r.status);
        return r.json();
     }).then(function(data){
