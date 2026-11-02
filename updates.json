@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "repository": "1234Taschenlampe/ORBIT",
-  "generatedAt": null,
-  "notice": "No APKs have been published to apks/ yet. Metadata only: no installations or cryptographic verification performed.",
+  "generatedAt": "2026-11-02T20:20:33.371397+00:00",
+  "notice": "Static metadata only. Device compatibility and APK signatures are not independently verified.",
   "artifacts": [],
   "ignored": []
 }
