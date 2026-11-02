@@ -1,0 +1,265 @@
+{
+  "version": 1,
+  "updated": "2026-11-02",
+  "repository": "1234Taschenlampe/ORBIT",
+  "disclaimer": "Die APKs wurden nur strukturell geprüft (Archiv, Manifest, DEX und vorhandener APK-Signaturblock). Installation und Laufzeitverhalten sind nicht verifiziert.",
+  "apps": [
+    {
+      "id": "reelguard",
+      "name": "ReelGuard",
+      "tagline": "Mehr Fokus. Weniger Reels.",
+      "category": "Fokus",
+      "mark": "RG",
+      "tone": "violet",
+      "description": "Experimentelle Android-App zur Begrenzung von Kurzvideo-Feeds. Die Sperre kann in bestimmten Nutzungssituationen umgangen werden.",
+      "notice": "Bekanntes Problem: Bei schnellem Öffnen von Instagram können Reels unter Umständen weiterhin gescrollt werden. Nicht als zuverlässig funktionierende Sperre bestätigt.",
+      "builds": [
+        [
+          "ReelGuard_v0.3-debug.apk",
+          "0.3",
+          "Debug"
+        ],
+        [
+          "ReelGuard-v0.2-Android-Install.apk",
+          "0.2",
+          "Test"
+        ],
+        [
+          "ReelGuard-v0.2-debug.apk",
+          "0.2",
+          "Debug"
+        ]
+      ]
+    },
+    {
+      "id": "localvoice",
+      "name": "LocalVoice",
+      "tagline": "Spracheingabe auf Android.",
+      "category": "Produktivität",
+      "mark": "LV",
+      "tone": "blue",
+      "description": "Lokale Diktier- und Spracheingabe-Experimente für Android, einschließlich älterer Tastatur-Varianten.",
+      "notice": "Bekanntes Problem aus früheren Tests: Das Mikrofon-Symbol kann sofort wieder verschwinden. Die hier vorhandenen Builds wurden nicht auf Fehlerbehebung geprüft.",
+      "builds": [
+        [
+          "LocalVoice-v0.4.0-Beta-Pixel9.apk",
+          "0.4.0",
+          "Beta"
+        ],
+        [
+          "LocalVoice-v0.4.0-Beta-Pixel9(1).apk",
+          "0.4.0",
+          "Duplikat"
+        ],
+        [
+          "LocalVoice-v0.3.2-Update.apk",
+          "0.3.2",
+          "Update"
+        ],
+        [
+          "LocalVoice-v0.3.2-Pixel9.apk",
+          "0.3.2",
+          "Duplikat"
+        ],
+        [
+          "LocalVoice-v0.3.1-Offline-Release.apk",
+          "0.3.1",
+          "Release"
+        ],
+        [
+          "LocalVoice-v0.3.0-Release.apk",
+          "0.3.0",
+          "Release"
+        ],
+        [
+          "LocalVoice-Diktier-Tastatur.apk",
+          "Legacy",
+          "Test"
+        ],
+        [
+          "LocalVoice-Pixel9.apk",
+          "Legacy",
+          "Test"
+        ]
+      ]
+    },
+    {
+      "id": "tagezaehler",
+      "name": "Tagezähler",
+      "tagline": "Wichtige Termine im Blick.",
+      "category": "Produktivität",
+      "mark": "TZ",
+      "tone": "orange",
+      "description": "Android-Countdown für persönliche Termine und Widgets.",
+      "notice": "Funktionsumfang und unterschiedliche Widget-Größen wurden nicht abschließend auf einem Android-Gerät geprüft.",
+      "builds": [
+        [
+          "Tagezaehler_v1_1.apk",
+          "1.1",
+          "Test"
+        ],
+        [
+          "Tagezaehler.apk",
+          "1.0",
+          "Test"
+        ]
+      ]
+    },
+    {
+      "id": "routinen",
+      "name": "Routinen",
+      "tagline": "Abläufe auf Android.",
+      "category": "Produktivität",
+      "mark": "RT",
+      "tone": "green",
+      "description": "Verschiedene experimentelle Builds für Routinen und Android-Gerätemodi.",
+      "notice": "Ältere Android-17- und Pixel-Varianten sind enthalten. Kompatibilität und automatische Ausführung nicht unabhängig geprüft.",
+      "builds": [
+        [
+          "Routinen-Neu-3.0.apk",
+          "3.0",
+          "Test"
+        ],
+        [
+          "Routinen-Android17-v2.0.1.apk",
+          "2.0.1",
+          "Test"
+        ],
+        [
+          "Routinen-Android17.apk",
+          "2.0",
+          "Test"
+        ],
+        [
+          "Routinen-Android17(1).apk",
+          "2.0",
+          "Duplikat"
+        ],
+        [
+          "Pixel-Routinen.apk",
+          "Legacy",
+          "Test"
+        ]
+      ]
+    },
+    {
+      "id": "privacyguard",
+      "name": "Privacy Guard",
+      "tagline": "Datenschutz-Experiment.",
+      "category": "System & Tools",
+      "mark": "PG",
+      "tone": "red",
+      "description": "Experimenteller Android-Build mit Fokus auf Datenschutz.",
+      "notice": "Debug-Build. Installation, benötigte Berechtigungen und Wirkung wurden nicht auf einem Gerät getestet.",
+      "builds": [
+        [
+          "Privacy-Guard-Pixel9-debug.apk",
+          "Debug",
+          "Debug"
+        ]
+      ]
+    },
+    {
+      "id": "naechstestunde",
+      "name": "NächsteStunde",
+      "tagline": "Für den Schulalltag.",
+      "category": "Produktivität",
+      "mark": "NS",
+      "tone": "cyan",
+      "description": "Kleines Android-Projekt rund um den nächsten Stundenabschnitt.",
+      "notice": "Keine unabhängige Funktions- und Geräteprüfung.",
+      "builds": [
+        [
+          "NaechsteStunde-v1.1.0.apk",
+          "1.1.0",
+          "Release"
+        ]
+      ]
+    },
+    {
+      "id": "reelflow",
+      "name": "ReelFlow",
+      "tagline": "Kurzvideo-Experiment.",
+      "category": "Fokus",
+      "mark": "RF",
+      "tone": "pink",
+      "description": "Früher experimenteller Android-Build rund um Kurzvideo-Nutzung.",
+      "notice": "Zweck, Bedienung und Funktionsfähigkeit des Builds nicht abschließend geprüft.",
+      "builds": [
+        [
+          "ReelFlow-1.1.apk",
+          "1.1",
+          "Release"
+        ]
+      ]
+    },
+    {
+      "id": "tune760",
+      "name": "Tune760Control",
+      "tagline": "Geräte-Steuerung.",
+      "category": "System & Tools",
+      "mark": "T7",
+      "tone": "yellow",
+      "description": "Android-Testbuild für eine gerätespezifische Steuerungsoberfläche.",
+      "notice": "Funktion und Kompatibilität mit entsprechender Hardware nicht geprüft.",
+      "builds": [
+        [
+          "Tune760Control-1.0.0.apk",
+          "1.0.0",
+          "Release"
+        ]
+      ]
+    },
+    {
+      "id": "grainframe",
+      "name": "GrainFrame",
+      "tagline": "Ein kreatives Experiment.",
+      "category": "Experimente",
+      "mark": "GF",
+      "tone": "purple",
+      "description": "Eigenständiger Android-Build aus der Projektsammlung.",
+      "notice": "Keine unabhängige Funktions- und Geräteprüfung; keine verifizierte Funktionsbeschreibung verfügbar.",
+      "builds": [
+        [
+          "GrainFrame-1.0.2.apk",
+          "1.0.2",
+          "Release"
+        ]
+      ]
+    },
+    {
+      "id": "nfclab",
+      "name": "NFC Lab",
+      "tagline": "NFC ausprobieren.",
+      "category": "System & Tools",
+      "mark": "NF",
+      "tone": "teal",
+      "description": "Experimentelles Android-Projekt aus dem NFC-Bereich.",
+      "notice": "Für NFC-Funktionen wird geeignete Hardware benötigt. Einzelne Funktionen wurden nicht geprüft.",
+      "builds": [
+        [
+          "NFC-Lab-1.1.0.apk",
+          "1.1.0",
+          "Release"
+        ]
+      ]
+    },
+    {
+      "id": "wifiquiet",
+      "name": "WiFiQuiet",
+      "tagline": "Netzwerk & Gerätemodi.",
+      "category": "System & Tools",
+      "mark": "WQ",
+      "tone": "slate",
+      "description": "Android-Testbuild im Bereich WLAN- und Pixel-Gerätemodi.",
+      "notice": "Automatisierungen können durch Android-Berechtigungen eingeschränkt werden. Funktion nicht auf einem Gerät bestätigt.",
+      "builds": [
+        [
+          "WifiQuiet-Pixel-Modes.apk",
+          "Test",
+          "Test"
+        ]
+      ]
+    }
+  ]
+}
