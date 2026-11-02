@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" role="img" aria-label="ORBIT">
+<defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#b8adff"/><stop offset="1" stop-color="#6bd6f1"/></linearGradient><radialGradient id="p"><stop stop-color="#d8ceff"/><stop offset="1" stop-color="#6b61be"/></radialGradient></defs>
+<rect width="96" height="96" rx="25" fill="#141a2b"/>
+<circle cx="48" cy="48" r="23" fill="url(#p)"/>
+<ellipse cx="48" cy="48" rx="40" ry="19" fill="none" stroke="url(#g)" stroke-width="6" transform="rotate(-28 48 48)"/>
+<circle cx="82" cy="28" r="7" fill="#77e2ef"/>
+</svg>
