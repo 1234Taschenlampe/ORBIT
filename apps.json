@@ -39,7 +39,7 @@
       "mark": "LV",
       "tone": "blue",
       "description": "Lokale Diktier- und Spracheingabe-Experimente für Android, einschließlich älterer Tastatur-Varianten.",
-      "notice": "Bekanntes Problem aus früheren Tests: Das Mikrofon-Symbol kann sofort wieder verschwinden. Die hier vorhandenen Builds wurden nicht auf Fehlerbehebung geprüft.",
+      "notice": "Bekanntes UI-Problem: Das Mikrofon-Symbol kann sofort wieder verschwinden. Achtung: Die Builds verwenden unterschiedliche Android-Paketkennungen (u. a. de.localvoice.overlay, de.localvoice.keyboard, de.localvoice.voicekeyboard und de.localvoice.app). v0.4.0 ersetzt deshalb die v0.3.x-Reihe nicht einfach als Update.",
       "builds": [
         [
           "LocalVoice-v0.4.0-Beta-Pixel9.apk",
@@ -113,7 +113,7 @@
       "mark": "RT",
       "tone": "green",
       "description": "Verschiedene experimentelle Builds für Routinen und Android-Gerätemodi.",
-      "notice": "Ältere Android-17- und Pixel-Varianten sind enthalten. Kompatibilität und automatische Ausführung nicht unabhängig geprüft.",
+      "notice": "Wichtiger Kompatibilitätshinweis: Routinen 3.0 hat die Paketkennung de.jfe.routinen.reworked, ältere Routinen-Builds verwenden de.jfe.wifiquiet. Sie sind nicht einfach dieselbe App-Version. Alte Routinen-Builds kollidieren über die Paketkennung zudem mit WiFiQuiet. Signatur-Kompatibilität wurde nicht geprüft.",
       "builds": [
         [
           "Routinen-Neu-3.0.apk",
@@ -252,7 +252,7 @@
       "mark": "WQ",
       "tone": "slate",
       "description": "Android-Testbuild im Bereich WLAN- und Pixel-Gerätemodi.",
-      "notice": "Automatisierungen können durch Android-Berechtigungen eingeschränkt werden. Funktion nicht auf einem Gerät bestätigt.",
+      "notice": "WiFiQuiet verwendet die Android-Paketkennung de.jfe.wifiquiet; dieselbe Kennung haben ältere Routinen-Builds. Gleichzeitige Installation als getrennte Apps ist daher nicht möglich. Signatur-Kompatibilität und Funktionen nicht geprüft.",
       "builds": [
         [
           "WifiQuiet-Pixel-Modes.apk",
