@@ -12,7 +12,7 @@
       "mark": "RG",
       "tone": "violet",
       "description": "Experimentelle Android-App zur Begrenzung von Kurzvideo-Feeds. Die Sperre kann in bestimmten Nutzungssituationen umgangen werden.",
-      "notice": "Bekanntes Problem: Bei schnellem Öffnen von Instagram können Reels unter Umständen weiterhin gescrollt werden. Nicht als zuverlässig funktionierende Sperre bestätigt.",
+      "notice": "Bekannter Funktionsfehler in den bisherigen Builds: Beim schnellen Öffnen von Instagram konnten Reels teilweise weiterhin gescrollt werden. Außerdem sind 0.2 und 0.3 unterschiedlich signiert; die APK 0.3 kann die installierte 0.2 daher nicht normal aktualisieren. Ein v0.4-Quellprojekt existiert, ist aber noch nicht als überprüfte APK veröffentlicht.",
       "builds": [
         [
           "ReelGuard_v0.3-debug.apk",
@@ -39,7 +39,7 @@
       "mark": "LV",
       "tone": "blue",
       "description": "Lokale Diktier- und Spracheingabe-Experimente für Android, einschließlich älterer Tastatur-Varianten.",
-      "notice": "Bekanntes UI-Problem: Das Mikrofon-Symbol kann sofort wieder verschwinden. Achtung: Die Builds verwenden unterschiedliche Android-Paketkennungen (u. a. de.localvoice.overlay, de.localvoice.keyboard, de.localvoice.voicekeyboard und de.localvoice.app). v0.4.0 ersetzt deshalb die v0.3.x-Reihe nicht einfach als Update.",
+      "notice": "Bei v0.4.0 kann der Mikrofon-Overlay-Button verschwinden; die dauerhafte Sichtbarkeit ist nicht bestätigt. LocalVoice v0.3.x ist eine eigenständige Tastatur-Paketreihe (de.localvoice.keyboard), v0.4.0 eine Overlay-App (de.localvoice.overlay). Die 0.3.x-Reihe verwendet intern eine konsistente Signatur, aber 0.4 ist kein Update derselben App.",
       "builds": [
         [
           "LocalVoice-v0.4.0-Beta-Pixel9.apk",
@@ -91,7 +91,7 @@
       "mark": "TZ",
       "tone": "orange",
       "description": "Android-Countdown für persönliche Termine und Widgets.",
-      "notice": "Funktionsumfang und unterschiedliche Widget-Größen wurden nicht abschließend auf einem Android-Gerät geprüft.",
+      "notice": "Die APKs 1.0.0 und 1.1.0 verwenden dieselbe Paketkennung, aber unterschiedliche Signaturzertifikate. Ein direktes Update ist damit nicht möglich. Der Quellcodebestand muss mit der neuesten APK abgeglichen werden; Widget-Formate sind geräteseitig ungetestet.",
       "builds": [
         [
           "Tagezaehler_v1_1.apk",
@@ -113,7 +113,7 @@
       "mark": "RT",
       "tone": "green",
       "description": "Verschiedene experimentelle Builds für Routinen und Android-Gerätemodi.",
-      "notice": "Wichtiger Kompatibilitätshinweis: Routinen 3.0 hat die Paketkennung de.jfe.routinen.reworked, ältere Routinen-Builds verwenden de.jfe.wifiquiet. Sie sind nicht einfach dieselbe App-Version. Alte Routinen-Builds kollidieren über die Paketkennung zudem mit WiFiQuiet. Signatur-Kompatibilität wurde nicht geprüft.",
+      "notice": "Kritisch für Updates: Ältere Routinen-Builds 2.0.0 und 2.0.1 sowie WiFiQuiet/Pixel-Routinen nutzen teils denselben Paketnamen de.jfe.wifiquiet, aber verschiedene Signaturen. Auch Routinen 3.0 verwendet eine andere Paketkennung. Viele Varianten sind als Debug konfiguriert; Berechtigungen und Hintergrundprozesse müssen geprüft werden.",
       "builds": [
         [
           "Routinen-Neu-3.0.apk",
@@ -150,7 +150,7 @@
       "mark": "PG",
       "tone": "red",
       "description": "Experimenteller Android-Build mit Fokus auf Datenschutz.",
-      "notice": "Debug-Build. Installation, benötigte Berechtigungen und Wirkung wurden nicht auf einem Gerät getestet.",
+      "notice": "Debug-Build mit Kamera- und Device-Admin-Komponenten; keine geräteseitigen Funktions- oder Datenschutztests bestätigt. Vor uneingeschränkter Veröffentlichung als stabile App sollten Berechtigungen, UI-Zustände und die Größe von rund 78 MB überprüft werden.",
       "builds": [
         [
           "Privacy-Guard-Pixel9-debug.apk",
