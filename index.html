@@ -135,13 +135,12 @@
      return fetch("./apps.json",{cache:"no-store"}).then(function(r){if(!r.ok)throw Error("Katalog fehlt");return r.json()}).then(function(data){if(!Array.isArray(data.apps))throw Error("Ungültiger Katalog");state.apps=data.apps;renderFilters();render()}).catch(function(){byId("app-grid").innerHTML='<div class="empty" style="grid-column:1/-1"><h3>Katalog nicht erreichbar.</h3><p>Prüfe die Veröffentlichung oder öffne das GitHub-Repository.</p></div>';byId("counter").textContent="Katalog nicht verfügbar"});
   }
   function checkAvailability(){
-    return fetch("https://api.github.com/repos/"+REPO+"/contents/apks?ref=main",{headers:{"Accept":"application/vnd.github+json"}}).then(function(r){
-       if(r.status===404)return [];
-       if(!r.ok)throw Error("GitHub API "+r.status);
+    return fetch("./updates.json",{cache:"no-store"}).then(function(r){
+       if(!r.ok)throw Error("Update-Feed nicht verfügbar: "+r.status);
        return r.json();
     }).then(function(data){
-       if(!Array.isArray(data))throw Error("Unerwartete Antwort");
-       state.present=new Map(data.filter(function(f){return f.type==="file"&&f.name.endsWith(".apk")}).map(function(f){return [f.name,{size:f.size}]}));
+       if(!data || !Array.isArray(data.artifacts))throw Error("Unerwartete Antwort");
+       state.present=new Map(data.artifacts.filter(function(f){return f.filename&&f.filename.endsWith(".apk")}).map(function(f){return [f.filename,{size:f.size}]}));
        state.availability="ready";render();
        if(state.present.size===0){byId("store-notice").innerHTML='<span><b>Der Katalog ist online, aber noch keine APK wurde veröffentlicht.</b> Sobald APK-Dateien im Ordner <code>apks/</code> hochgeladen wurden, erscheinen hier automatisch die Download-Buttons. Die Builds sind nicht auf Android getestet.</span>'}
     }).catch(function(){state.availability="unknown";render()});
