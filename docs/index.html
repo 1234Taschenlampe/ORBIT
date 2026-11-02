@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#090c13">
+  <link rel="icon" href="./favicon.svg" type="image/svg+xml">
+  <meta name="description" content="ORBIT – ein unabhängiger Katalog experimenteller Android-Apps mit direktem APK-Download, Versionen und transparenten Hinweisen.">
+  <meta property="og:title" content="ORBIT – Dein Android App-Katalog">
+  <meta property="og:description" content="Android-Apps entdecken. Builds vergleichen. Direkt herunterladen.">
+  <title>ORBIT — Android App Collection</title>
+  <style>
+  :root{color-scheme:dark;--bg:#090c13;--bg2:#0d1220;--panel:#121827;--panel2:#171e30;--line:#2b3449;--text:#f5f7ff;--muted:#9da8c1;--accent:#a8a5ff;--accent2:#74d6ef;--radius:23px}
+  *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--text);font:15px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif}a{color:inherit;text-decoration:none}button,input,select{font:inherit}button{cursor:pointer}button:disabled{cursor:not-allowed}button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid var(--accent2);outline-offset:3px}::selection{background:#625fbb;color:white}
+  .skip{position:absolute;top:-90px;left:12px;background:white;color:black;padding:10px;z-index:100}.skip:focus{top:12px}
+  .shell{width:min(1190px,calc(100% - 40px));margin:auto}
+  .header{z-index:20;position:sticky;top:0;backdrop-filter:blur(22px);-webkit-backdrop-filter:blur(22px);background:rgba(9,12,19,.83);border-bottom:1px solid rgba(176,189,220,.12)}
+  .bar{height:76px;display:flex;align-items:center;gap:28px}.brand{display:inline-flex;align-items:center;gap:12px;font-size:19px;font-weight:850;letter-spacing:.20em}.logo{width:38px;height:38px;display:inline-grid;place-items:center;border-radius:12px;background:linear-gradient(135deg,#b1a7ff,#75cde5);box-shadow:0 0 34px #6b68c133}.logo svg{width:29px;height:29px}.brand .dot{color:var(--accent)}
+  .navlinks{display:flex;gap:27px;margin-left:24px;color:#aeb8cf;font-size:13px;font-weight:650}.navlinks a:hover{color:white}
+  .spacer{flex:1}.header-link{border:1px solid var(--line);border-radius:999px;padding:9px 15px;color:#e5eafa;font-weight:700;font-size:12px;white-space:nowrap}.header-link:hover{border-color:var(--accent)}
+  .hero{position:relative;overflow:hidden;background:radial-gradient(ellipse at 70% 45%,#25203f 0%,transparent 50%),radial-gradient(ellipse at 18% 0%,#1d2444 0%,transparent 45%),var(--bg);border-bottom:1px solid #242a3d}
+  .hero:before{content:"";position:absolute;inset:0;pointer-events:none;opacity:.28;background-image:radial-gradient(#b8c1ff 0.7px,transparent 1px);background-size:35px 35px;mask-image:linear-gradient(to right,transparent 12%,black 87%)}
+  .hero-inner{min-height:460px;display:grid;grid-template-columns:1.05fr .95fr;align-items:center;gap:18px;padding:64px 0 70px}
+  .eyebrow{display:inline-flex;align-items:center;gap:9px;color:#c8c7ff;font-size:11px;font-weight:850;letter-spacing:.21em;text-transform:uppercase}.eyebrow:before{content:"";height:7px;width:7px;border-radius:50%;background:#b0aaff;box-shadow:0 0 14px #b0aaff}
+  h1{font-size:clamp(49px,5.8vw,79px);line-height:1.07;letter-spacing:-.065em;margin:20px 0 18px;font-weight:850}h1 span{background:linear-gradient(110deg,#d4c8ff,#8cd9f1);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .hero p{max-width:480px;color:#adb8ce;font-size:16px;margin:0 0 26px}.cta-row{display:flex;gap:11px;flex-wrap:wrap}
+  .primary,.secondary{display:inline-flex;align-items:center;justify-content:center;gap:9px;border-radius:13px;padding:13px 19px;font-weight:760;font-size:13px;transition:transform .15s,background .15s,border-color .15s}.primary:hover,.secondary:hover{transform:translateY(-2px)}.primary{border:1px solid #b8b0ff;background:#a5a0fc;color:#111225}.primary:hover{background:#c0bcff}.secondary{border:1px solid #3c4662;background:#161b2b;color:#e6eafd}.secondary:hover{border-color:#8d9fcd}
+  .planet-scene{position:relative;height:380px;display:grid;place-items:center;isolation:isolate}.orbit-line{position:absolute;border:1px solid rgba(166,162,247,.22);border-radius:50%;width:385px;height:230px;transform:rotate(-26deg)}.orbit-line.second{width:450px;height:280px;transform:rotate(27deg);border-color:#6ac6db22}
+  .planet{width:242px;height:242px;border-radius:50%;background:radial-gradient(circle at 26% 20%,#e1d4ff 0%,#b4a0f1 20%,#65549f 51%,#222743 85%);box-shadow:inset -34px -28px 56px #101427bb,0 0 75px #5f53a55c,0 0 140px #38497828;transform:rotate(14deg)}
+  .orb-label{position:absolute;display:flex;align-items:center;gap:12px;background:rgba(19,25,41,.88);border:1px solid #455173;border-radius:16px;padding:10px 15px;box-shadow:0 20px 50px #0006;backdrop-filter:blur(10px);font-size:12px;font-weight:700}.orb-label small{display:block;color:#9da8c1;font-size:10px;font-weight:500}.orb-label.top{top:24px;right:3%}.orb-label.bottom{bottom:25px;left:2%}.orb-mini{width:32px;height:32px;background:linear-gradient(135deg,#6966dd,#87ddf2);border-radius:10px;display:grid;place-items:center;color:#090c13;font-weight:850}
+  .metrics{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid var(--line);border-radius:20px;margin-top:35px;background:#101521;overflow:hidden}.metric{padding:18px 20px;text-align:center}.metric+.metric{border-left:1px solid var(--line)}.metric strong{font-size:24px;letter-spacing:-.04em;display:block;line-height:1.3}.metric span{font-size:11px;color:var(--muted)}
+  .catalog{padding:72px 0 96px}.section-kicker{color:var(--accent);font-weight:850;font-size:11px;letter-spacing:.18em;text-transform:uppercase}.section-head{display:flex;align-items:end;justify-content:space-between;gap:16px;margin-bottom:23px}.section-head h2{font-size:clamp(27px,3vw,39px);letter-spacing:-.045em;line-height:1.15;margin:8px 0}.section-head p{color:var(--muted);margin:0;font-size:13px}.catalog-meta{color:var(--muted);font-size:12px;white-space:nowrap}
+  .notice{border:1px solid #4b456b;background:linear-gradient(95deg,#1d1b30,#151a2a);padding:13px 17px;border-radius:13px;color:#cfc9f8;font-size:12px;margin-bottom:22px;display:flex;gap:12px;align-items:flex-start}.notice svg{flex-shrink:0}.notice b{color:#ece7ff}
+  .toolbar{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:16px}.searchbox{position:relative;flex:1;min-width:220px}.searchbox svg{position:absolute;top:50%;left:16px;transform:translateY(-50%);color:#8b97b4}.searchbox input{width:100%;height:48px;padding:0 16px 0 48px;border:1px solid var(--line);background:var(--panel);border-radius:13px;color:white;outline:none}.searchbox input:focus{border-color:#aaa6f8;box-shadow:0 0 0 3px #9a90ff18}.searchbox input::placeholder{color:#737f99}.sort{height:48px;padding:0 14px;background:var(--panel);color:#d6dcef;border:1px solid var(--line);border-radius:13px}
+  .filters{display:flex;gap:8px;overflow-x:auto;padding:3px 0 20px;scrollbar-width:thin}.filter{white-space:nowrap;flex-shrink:0;border:1px solid #333b4f;background:#121827;padding:9px 14px;border-radius:999px;font-size:12px;color:#aeb9d1;font-weight:720}.filter:hover{color:white;border-color:#757da5}.filter.selected{background:#a8a5ff;border-color:#a8a5ff;color:#10121c}
+  .results-meta{display:flex;align-items:center;justify-content:space-between;color:#8d9bb5;font-size:12px;margin:0 0 17px}.results-meta b{color:#d6dafa}.availability{display:flex;align-items:center;gap:7px}.live-dot{width:6px;height:6px;background:#82d9b1;border-radius:50%;box-shadow:0 0 10px #82d9b166}.live-dot.pending{background:#dfbd72;box-shadow:none}
+  .grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:17px}.app-card{position:relative;min-width:0;padding:22px;border:1px solid #2c3549;border-radius:21px;background:linear-gradient(151deg,#171e30,#101620 85%);display:flex;flex-direction:column;min-height:291px;transition:transform .18s,border-color .18s,box-shadow .18s}.app-card:hover{transform:translateY(-4px);border-color:#7772c1;box-shadow:0 16px 44px #0004}
+  .card-top{display:flex;align-items:flex-start;justify-content:space-between;gap:8px}.app-icon{width:65px;height:65px;flex-shrink:0;border-radius:18px;display:grid;place-items:center;font-weight:900;letter-spacing:-.055em;font-size:24px;color:#f8f8ff;box-shadow:inset 0 1px #ffffff3b,0 15px 28px #0003}.app-icon.small{width:42px;height:42px;border-radius:13px;font-size:15px}
+  .tone-violet{background:linear-gradient(145deg,#7a63eb,#4836a0)}.tone-blue{background:linear-gradient(145deg,#348fef,#3e43bd)}.tone-orange{background:linear-gradient(145deg,#f5af68,#c7633d)}.tone-green{background:linear-gradient(145deg,#74cfab,#267f76)}.tone-red{background:linear-gradient(145deg,#ec7c98,#933758)}.tone-cyan{background:linear-gradient(145deg,#69d9e2,#377aaf)}.tone-pink{background:linear-gradient(145deg,#da8bce,#8a3e95)}.tone-yellow{background:linear-gradient(145deg,#e5c779,#9e7932)}.tone-purple{background:linear-gradient(145deg,#b491d3,#654f9b)}.tone-teal{background:linear-gradient(145deg,#60bbab,#236c7d)}.tone-slate{background:linear-gradient(145deg,#839dbf,#424c81)}
+  .pill{padding:4px 9px;border:1px solid #43506b;border-radius:999px;font-size:10px;color:#bcc6db;font-weight:740;white-space:nowrap}.pill.ready{color:#8ee7c1;border-color:#2b6c5a;background:#1c382d}.pill.beta{color:#f2d194;border-color:#86683b;background:#3e3223}
+  .app-card h3{font-size:20px;letter-spacing:-.035em;margin:18px 0 2px}.tagline{font-size:12px;color:#bfc7d7;margin:0}.desc{color:#8f9db7;font-size:12px;line-height:1.65;margin:15px 0 20px;flex:1}.card-bottom{border-top:1px solid #303a4e;padding-top:15px;display:flex;align-items:center;justify-content:space-between;gap:8px}.card-stats{font-size:11px;color:#9ca8bc}.details{border:1px solid #525e82;padding:9px 14px;border-radius:10px;background:#262e48;color:#e8eaff;font-size:12px;font-weight:750}.details:hover{background:#363f62}
+  .empty{padding:70px 15px;border:1px dashed #45506a;border-radius:18px;text-align:center;color:#a8b4c9}.empty h3{color:white;margin:0 0 8px}.empty button{margin-top:16px}
+  .story{display:grid;grid-template-columns:1fr 1fr;gap:23px;padding:0 0 88px}.feature{padding:27px;border:1px solid var(--line);border-radius:19px;background:#121724}.feature .feature-id{color:var(--accent);font-size:11px;font-weight:850;letter-spacing:.16em}.feature h3{margin:9px 0;font-size:19px;letter-spacing:-.035em}.feature p{color:var(--muted);font-size:13px;margin:0}
+  .footer{border-top:1px solid #293248;padding:32px 0 50px;color:#97a1bb;font-size:12px}.footflex{display:flex;gap:12px;align-items:center;justify-content:space-between;flex-wrap:wrap}.footlinks{display:flex;gap:22px}.footlinks a:hover{color:white}
+  dialog{width:min(690px,calc(100% - 24px));max-height:min(88vh,900px);color:var(--text);padding:0;border:1px solid #555e83;border-radius:22px;background:#111827;box-shadow:0 36px 130px #000c}dialog::backdrop{background:rgba(3,5,10,.78);backdrop-filter:blur(9px)}.modal-inner{padding:29px}.modal-head{display:flex;justify-content:space-between;gap:15px;align-items:flex-start}.modal-title{display:flex;gap:15px;align-items:center}.modal-title h2{font-size:24px;letter-spacing:-.045em;margin:0}.modal-title p{margin:2px 0;color:var(--muted);font-size:12px}.close{background:#252e43;border:1px solid #404a68;border-radius:11px;color:#dce3f7;font-size:20px;width:37px;height:37px;display:grid;place-items:center;flex-shrink:0}.modal-copy{font-size:13px;color:#b5bfd3;margin:22px 0}.alert{background:#322b29;border:1px solid #726044;border-radius:12px;padding:12px 14px;font-size:12px;color:#f2d3a3}.build-header{font-weight:850;font-size:13px;display:flex;justify-content:space-between;margin:25px 0 13px}.build-header small{color:var(--muted);font-weight:500}.build-list{display:flex;flex-direction:column;gap:9px}.build{display:flex;align-items:center;justify-content:space-between;gap:12px;border:1px solid #323d53;background:#1a2233;padding:13px;border-radius:12px}.build-left{min-width:0}.build-name{font-size:12px;font-weight:740;overflow-wrap:anywhere}.build-sub{font-size:11px;color:#9ba7bf;margin-top:3px}.build-action{flex-shrink:0;background:#a8a5ff;color:#121323;border:0;border-radius:9px;font-size:11px;font-weight:780;padding:9px 12px}.build-action[disabled]{background:#353c50;color:#8995b0}.build-action:hover:not([disabled]){background:#cbc6ff}.fineprint{font-size:11px;color:#8e9ab3;margin:18px 0 0}
+  @media(max-width:960px){.hero-inner{grid-template-columns:1fr .75fr}.planet-scene{transform:scale(.83)}.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.navlinks{display:none}}
+  @media(max-width:640px){.shell{width:min(100% - 30px,1190px)}.bar{height:66px}.header-link{font-size:11px;padding:8px 10px}.brand{font-size:17px}.logo{width:34px;height:34px}.hero-inner{display:block;padding:67px 0 54px;min-height:0}.hero p{font-size:14px}.planet-scene{display:none}.metrics{margin-top:30px}.metric{padding:15px 7px}.metric strong{font-size:19px}.metric span{font-size:10px}.catalog{padding:56px 0 66px}.section-head{align-items:start}.catalog-meta{display:none}.toolbar{display:block}.sort{width:100%;margin-top:10px}.searchbox{min-width:0}.grid{grid-template-columns:1fr}.app-card{min-height:265px}.story{grid-template-columns:1fr;gap:12px;padding-bottom:65px}.modal-inner{padding:18px}.build{align-items:flex-start;flex-direction:column}.build-action{align-self:stretch}.notice{font-size:11px}}
+  @media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;transition:none!important}}
+  </style>
+</head>
+<body>
+<a class="skip" href="#apps">Zum App-Katalog springen</a>
+<header class="header"><div class="shell bar">
+ <a class="brand" href="./" aria-label="ORBIT Startseite"><span class="logo"><svg viewBox="0 0 40 40" aria-hidden="true" fill="none"><circle cx="20" cy="20" r="7" fill="#11182A"/><ellipse cx="20" cy="20" rx="17" ry="8" transform="rotate(-32 20 20)" stroke="#17203A" stroke-width="2.5"/><circle cx="34.2" cy="12" r="3" fill="#11182A"/></svg></span>ORBIT<span class="dot">.</span></a>
+ <nav class="navlinks" aria-label="Hauptnavigation"><a href="#apps">Apps entdecken</a><a href="#about">Über ORBIT</a></nav>
+ <div class="spacer"></div><a class="header-link" href="https://github.com/1234Taschenlampe/ORBIT" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+</div></header>
+<main>
+<section class="hero"><div class="shell hero-inner">
+ <div><span class="eyebrow">Independent Android Collection</span><h1>Entdecke<br><span>deinen Orbit.</span></h1>
+ <p>Ein Ort für unabhängige Android-Apps, kleine Experimente und nützliche Tools. Direkt als APK, mit Versionsübersicht und transparentem Teststatus.</p>
+ <div class="cta-row"><a href="#apps" class="primary">Apps entdecken <span aria-hidden="true">↓</span></a><a class="secondary" href="https://github.com/1234Taschenlampe/ORBIT" target="_blank" rel="noopener noreferrer">Repository ansehen ↗</a></div>
+ <div class="metrics"><div class="metric"><strong id="metric-apps">11</strong><span>App-Projekte</span></div><div class="metric"><strong id="metric-builds">25</strong><span>APK-Versionen</span></div><div class="metric"><strong id="metric-live">–</strong><span>Downloads online</span></div></div>
+ </div>
+ <div class="planet-scene" aria-hidden="true"><div class="orbit-line"></div><div class="orbit-line second"></div><div class="planet"></div><div class="orb-label top"><span class="orb-mini">A</span><span>Alle Apps<small>An einem Ort</small></span></div><div class="orb-label bottom"><span class="orb-mini">↧</span><span>Direkt installieren<small>APK-Downloads</small></span></div></div>
+</div></section>
+<section class="catalog shell" id="apps">
+ <div class="section-head"><div><div class="section-kicker">THE COLLECTION</div><h2>Finde deine nächste App.</h2><p>Suche nach Funktionen, stöbere nach Kategorien und vergleiche Builds.</p></div><span class="catalog-meta">Android · unabhängig · quelloffener Katalog</span></div>
+ <div class="notice" id="store-notice" role="status"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3 2 21h20L12 3Z" stroke="currentColor" stroke-width="1.6"/><path d="M12 9v5m0 4h.01" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><span>Die bereitgestellten APKs sind <b>experimentelle Builds</b>. Eine strukturelle Dateiprüfung ersetzt keinen Installationstest. Einzelheiten stehen jeweils bei der App.</span></div>
+ <div class="toolbar"><label class="searchbox"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="1.8"/><path d="m16 16 5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg><input id="search" type="search" placeholder="Apps, Funktionen oder Versionen suchen…" autocomplete="off" aria-label="Apps suchen"></label><select id="sort" class="sort" aria-label="Sortieren"><option value="featured">Empfohlen</option><option value="name">Name A–Z</option><option value="builds">Meiste Versionen</option></select></div>
+ <div id="filters" class="filters" role="group" aria-label="Kategorie filtern"></div>
+ <div class="results-meta"><span id="counter">Lade App-Katalog…</span><span class="availability"><span class="live-dot pending" id="live-dot"></span><span id="availability-text">Prüfe Downloads</span></span></div>
+ <div id="app-grid" class="grid" aria-live="polite"></div>
+</section>
+<section id="about" class="story shell">
+ <div class="feature"><div class="feature-id">01 / TRANSPARENT</div><h3>Jeder Build hat einen Status.</h3><p>Beta-, Test- und Debug-Versionen werden klar bezeichnet. Bekannte Probleme stehen direkt bei den jeweiligen Apps, statt versteckt zu werden.</p></div>
+ <div class="feature"><div class="feature-id">02 / DIREKT</div><h3>Kein Konto. Kein Umweg.</h3><p>Wenn die APK im öffentlichen GitHub-Repository verfügbar ist, führt dich der Download direkt zur Originaldatei. Keine QR-Codes, keine Fremd-Installer.</p></div>
+</section>
+</main>
+<footer class="footer"><div class="shell footflex"><div>© 2026 ORBIT · Ein unabhängiges Android-Projekt.</div><div class="footlinks"><a href="https://github.com/1234Taschenlampe/ORBIT" target="_blank" rel="noopener noreferrer">GitHub</a><a href="https://github.com/1234Taschenlampe/ORBIT/issues" target="_blank" rel="noopener noreferrer">Problem melden</a><a href="#apps">Zurück nach oben ↑</a></div></div></footer>
+<dialog id="details" aria-label="App-Details"><div class="modal-inner"><div class="modal-head"><div id="detail-title"></div><button type="button" class="close" id="detail-close" aria-label="Schließen">×</button></div><p class="modal-copy" id="detail-description"></p><div id="detail-notice"></div><div class="build-header"><span>Alle Builds</span><small id="detail-count"></small></div><div class="build-list" id="detail-builds"></div><p class="fineprint">Installationen außerhalb des Play Store erfordern eine Android-Freigabe. Für Updates müssen Paketname und Signatur der installierten App übereinstimmen. Die Funktion der APKs wurde nicht auf einem Endgerät bestätigt.</p></div></dialog>
+<script>
+(function(){
+  "use strict";
+  var REPO="1234Taschenlampe/ORBIT", RAW="https://raw.githubusercontent.com/"+REPO+"/main/apks/";
+  var state={apps:[],present:new Map(),availability:"loading",category:"Alle",query:"",sort:"featured"};
+  var byId=function(id){return document.getElementById(id)};
+  var escapeHtml=function(v){return String(v).replace(/[&<>"']/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]})};
+  var normalize=function(v){return String(v||"").toLocaleLowerCase("de-DE").normalize("NFD").replace(/[\u0300-\u036f]/g,"")};
+  var countBuilds=function(a){return a.builds.length};
+  var activeBuilds=function(a){return a.builds.filter(function(b){return state.present.has(b[0])})};
+  var fileUrl=function(n){return RAW+encodeURIComponent(n)};
+  var status=function(a){return state.availability==="unknown"?"Nicht verifiziert":activeBuilds(a).length?"Download verfügbar":state.availability==="loading"?"Prüfung läuft":"Noch nicht hochgeladen"};
+  var tone=function(a){return "tone-"+escapeHtml(a.tone||"slate")};
+  var pill=function(a){var ready=activeBuilds(a).length>0;var beta=a.builds[0]&&/Beta|Debug/i.test(a.builds[0][2]);return '<span class="pill '+(ready?"ready":beta?"beta":"")+'">'+escapeHtml(status(a))+"</span>"};
+  var card=function(a){return '<article class="app-card"><div class="card-top"><div class="app-icon '+tone(a)+'" aria-hidden="true">'+escapeHtml(a.mark)+'</div>'+pill(a)+'</div><h3>'+escapeHtml(a.name)+'</h3><p class="tagline">'+escapeHtml(a.tagline)+'</p><p class="desc">'+escapeHtml(a.description)+'</p><div class="card-bottom"><span class="card-stats">'+escapeHtml(a.category)+' · '+countBuilds(a)+' Build'+(countBuilds(a)===1?"":"s")+'</span><button type="button" class="details" data-details="'+escapeHtml(a.id)+'">Details & Downloads →</button></div></article>'};
+  function renderFilters(){var cs=["Alle"].concat(Array.from(new Set(state.apps.map(function(a){return a.category}))));byId("filters").innerHTML=cs.map(function(c){return '<button type="button" class="filter '+(c===state.category?"selected":"")+'" data-filter="'+escapeHtml(c)+'" aria-pressed="'+String(c===state.category)+'">'+escapeHtml(c)+'</button>'}).join("")}
+  function render(){
+    var query=normalize(state.query).trim();
+    var filtered=state.apps.filter(function(a){
+       return (state.category==="Alle"||a.category===state.category)&&(!query||normalize([a.name,a.tagline,a.description,a.category,a.notice].concat(a.builds.map(function(b){return b.join(" ")})).join(" ")).includes(query));
+    });
+    if(state.sort==="name")filtered.sort(function(a,b){return a.name.localeCompare(b.name,"de")});
+    if(state.sort==="builds")filtered.sort(function(a,b){return b.builds.length-a.builds.length||a.name.localeCompare(b.name,"de")});
+    byId("counter").innerHTML="<b>"+filtered.length+"</b> von "+state.apps.length+" Apps";
+    byId("app-grid").innerHTML=filtered.length?filtered.map(card).join(""):'<div class="empty" style="grid-column:1/-1"><h3>Keine Apps gefunden.</h3><p>Versuche einen anderen Suchbegriff oder wechsle die Kategorie.</p><button class="secondary" id="reset-search" type="button">Filter zurücksetzen</button></div>';
+    byId("metric-apps").textContent=String(state.apps.length);
+    byId("metric-builds").textContent=String(state.apps.reduce(function(n,a){return n+a.builds.length},0));
+    byId("metric-live").textContent=state.availability==="unknown"?"?":state.availability==="loading"?"–":String(state.present.size);
+    var indicator=byId("live-dot");indicator.classList.toggle("pending",state.availability!=="ready");
+    byId("availability-text").textContent=state.availability==="loading"?"Prüfe Downloads":state.availability==="unknown"?"Verfügbarkeit unbekannt":state.present.size+" APKs verfügbar";
+  }
+  function showDetails(id){
+    var a=state.apps.find(function(x){return x.id===id});if(!a)return;
+    byId("detail-title").innerHTML='<div class="modal-title"><span class="app-icon small '+tone(a)+'" aria-hidden="true">'+escapeHtml(a.mark)+'</span><div><h2>'+escapeHtml(a.name)+'</h2><p>'+escapeHtml(a.tagline)+' · '+escapeHtml(a.category)+'</p></div></div>';
+    byId("detail-description").textContent=a.description;
+    byId("detail-notice").innerHTML='<div class="alert"><b>Status:</b> Nicht auf einem Android-Gerät getestet. '+escapeHtml(a.notice)+'</div>';
+    byId("detail-count").textContent=a.builds.length+" Version"+(a.builds.length===1?"":"en");
+    byId("detail-builds").innerHTML=a.builds.map(function(b){
+      var available=state.present.has(b[0]);var size=available?state.present.get(b[0]).size:0;
+      var meta=escapeHtml(b[1])+" · "+escapeHtml(b[2])+(size?" · "+(size/1048576).toFixed(2)+" MiB":"");
+      var action=available?'<a class="build-action" href="'+fileUrl(b[0])+'" target="_blank" rel="noopener noreferrer" aria-label="'+escapeHtml(b[0])+' herunterladen">APK laden ↗</a>':'<button class="build-action" type="button" disabled>'+(state.availability==="unknown"?"Nicht verifiziert":"Nicht online")+'</button>';
+      return '<div class="build"><div class="build-left"><div class="build-name">'+escapeHtml(b[0])+'</div><div class="build-sub">'+meta+'</div></div>'+action+'</div>';
+    }).join("");
+    var dialog=byId("details");if(typeof dialog.showModal==="function")dialog.showModal();else dialog.setAttribute("open","");
+  }
+  byId("filters").addEventListener("click",function(e){var b=e.target.closest("button[data-filter]");if(!b)return;state.category=b.dataset.filter;renderFilters();render()});
+  byId("app-grid").addEventListener("click",function(e){var b=e.target.closest("button[data-details]");if(b)showDetails(b.dataset.details);if(e.target.id==="reset-search"){state.query="";state.category="Alle";byId("search").value="";renderFilters();render()}});
+  byId("search").addEventListener("input",function(e){state.query=e.target.value;render()});
+  byId("sort").addEventListener("change",function(e){state.sort=e.target.value;render()});
+  byId("detail-close").addEventListener("click",function(){byId("details").close()});
+  byId("details").addEventListener("click",function(e){if(e.target===this)this.close()});
+  document.addEventListener("keydown",function(e){if((e.ctrlKey||e.metaKey)&&e.key.toLowerCase()==="k"){e.preventDefault();byId("search").focus()}});
+  function loadCatalog(){
+     return fetch("./apps.json",{cache:"no-store"}).then(function(r){if(!r.ok)throw Error("Katalog fehlt");return r.json()}).then(function(data){if(!Array.isArray(data.apps))throw Error("Ungültiger Katalog");state.apps=data.apps;renderFilters();render()}).catch(function(){byId("app-grid").innerHTML='<div class="empty" style="grid-column:1/-1"><h3>Katalog nicht erreichbar.</h3><p>Prüfe die Veröffentlichung oder öffne das GitHub-Repository.</p></div>';byId("counter").textContent="Katalog nicht verfügbar"});
+  }
+  function checkAvailability(){
+    return fetch("https://raw.githubusercontent.com/1234Taschenlampe/ORBIT/main/updates.json",{cache:"no-store"}).then(function(r){
+       if(!r.ok)throw Error("Update-Feed nicht verfügbar: "+r.status);
+       return r.json();
+    }).then(function(data){
+       if(!data || !Array.isArray(data.artifacts))throw Error("Unerwartete Antwort");
+       state.present=new Map(data.artifacts.filter(function(f){return f.filename&&f.filename.endsWith(".apk")}).map(function(f){return [f.filename,{size:f.size}]}));
+       state.availability="ready";render();
+       if(state.present.size===0){byId("store-notice").innerHTML='<span><b>Der Katalog ist online, aber noch keine APK wurde veröffentlicht.</b> Sobald APK-Dateien im Ordner <code>apks/</code> hochgeladen wurden, erscheinen hier automatisch die Download-Buttons. Die Builds sind nicht auf Android getestet.</span>'}
+    }).catch(function(){state.availability="unknown";render()});
+  }
+  Promise.all([loadCatalog(),checkAvailability()]);
+})();
+</script>
+</body></html>
